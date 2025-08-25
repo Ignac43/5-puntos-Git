@@ -1,0 +1,12 @@
+#include <iostream>
+#include <string>   // librería string
+
+using namespace std;
+
+int main() {
+    string nombre;   // declaramos variable de tipo string
+    cout << "Ingrese su nombre: ";
+    cin >> nombre;   // leer el nombre
+    cout << "Hola Mundo " << nombre;  // mostrar mensaje
+    return 0;
+}
