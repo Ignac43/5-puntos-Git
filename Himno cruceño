@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    cout<<"El Himno Cruceño es el canto sublime con que los"<<endl;
+    cout<<"cruceños proclamamos nuestras glorias, anhelos y"<<endl;
+    cout<<"esperanzas; su letra expresa la limpidez e hidalguía"<<endl;
+    cout<<"sin mezquindades ni dobleces del cruceño, su amor"<<endl;
+    cout<<"al terruño y su acendrado patriotismo; al cantar sus"<<endl;
+    cout<<"estrofas con fervor cívico, siente la seguridad del"<<endl;
+    cout<<"cumplimiento de sus ideales."<<endl;
+    return 0;
+}
