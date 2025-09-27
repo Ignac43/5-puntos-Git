@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    double s, b, a, sueldofinal;
+    cout << "ingrese el sueldo basico del trabajador" << endl;
+	cin >> s;
+	cout << "ingrese el bono transporte" << endl;
+    cin >>b;
+	cout << "ingresar la bonificacion antiguedad" << endl;
+	cin >> a;
+	sueldofinal = s+b+a;
+	cout << "El sueldo final del trabajador es: " << sueldofinal;
+
+    return 0;
+}
