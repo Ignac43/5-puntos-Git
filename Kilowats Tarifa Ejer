@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+    double consumo, tarifa, descuento, subtotal, total;
+
+    cout << "Ingrese el numero de clientes: ";
+    cin >> N;
+
+    for (int i = 1; i <= N; i++) {
+        cout << "Ingrese el consumo en kWh: ";
+        cin >> consumo;
+        
+        if (consumo <= 100) {
+            tarifa = 1.20;
+            descuento = 0;
+        } else if (consumo <= 300) {
+            tarifa = 1.00;
+            descuento = 5;
+        } else if (consumo <= 600) {
+            tarifa = 0.90;
+            descuento = 10;
+        } else if (consumo <= 1000) {
+            tarifa = 0.85;
+            descuento = 15;
+        } else {
+            tarifa = 0.80;
+            descuento = 20;
+        }
+        subtotal = consumo * tarifa;
+       
+        double descuento_aplicado = subtotal * (descuento / 100);
+        total = subtotal - descuento_aplicado;
+        
+        cout << "Consumo: " << consumo << " kWh" << endl;
+        cout << "Tarifa: " << tarifa << " Bs/kWh" << endl;
+        cout << "Descuento: " << descuento << "%" << endl;
+        cout << "Subtotal: " << subtotal << " Bs" << endl;
+        cout << "Descuento aplicado: " << descuento_aplicado << " Bs" << endl;
+        cout << "Total a pagar: " << total << " Bs" << endl << endl;
+    }
+
+    return 0;
+}
