@@ -1,18 +1,19 @@
-#include <iostream>    
+#include <iostream>
 using namespace std;
 
 #define MAX 100
 
-// PROTOTIPOS DE FUNCIONES
+//PROTOTIPOS DE FUNCIONES
 void cargar(int vec[], int tam);
 void mostrar(int vec[], int tam);
 float promedio(int vec[], int tam);
-void ejercicio4(int vec[], int tam);
+int devolvermaxmin(int vec[], int tam, int& min);
 
-int main() {
-    int opcion, A[MAX], n;
+int main () {
+    int opcion, A[MAX], n, minimo;
     do {
-        cout << "Ingrese el tamano del vector: ";
+
+        cout << "Ingrese e tamano del vector: ";
         cin >> n;
     } while ((n < 0) || (n > MAX));
 
@@ -20,58 +21,59 @@ int main() {
         cout << "\t MENU" << endl;
         cout << "\n\n1. Cargar el vector";
         cout << "\n\n2. Mostrar el vector";
-        cout << "\n\n3. Calcular el promedio";
-        cout << "\n\n4. Promedio de cada tres valores consecutivos";
-        cout << "\n\n0. Salir";
-        cout << "\n\nOpcion: ";
+        cout << "\n\n3. Caclcular el promedio";
+        cout << "\n\n4. Cacular el mayor y el menor";
+        cout << "\n\n0. Opcion: ";
         cin >> opcion;
-
         switch (opcion) {
-            case 1: cargar(A, n); break;
-            case 2: mostrar(A, n); break;
-            case 3: cout << "El promedio es: " << promedio(A, n) << endl; break;
-            case 4: ejercicio4(A, n); break;
-            case 0: cout << "Salir" << endl; break;
-            default: cout << "No existe la opcion" << endl; break;
+            case 1: cargar(A, n);
+                break;
+            case 2: mostrar(A, n);
+                break;
+            case 3: promedio(A, n);
+                break;
+            case 4: cout << "El mayor valor es: " << devolvermaxmin(A, n, minimo);
+                cout << "El menor valor es: " << minimo;
+            case 0: cout << "Salir" << endl;
+                break;
+            default: cout << "No exitse la opcion" << endl;
+                break;
         }
     } while (opcion != 0);
-
     return 0;
-}
 
-// FUNCIONES
+    }
+   
+//DECLARACIONES
 
 void cargar(int vec[], int tam) {
     for (int i = 0; i < tam; i++) {
-        cout << "vec[" << i << "] = ";
+        cout << "vec[" << i << "] =";
         cin >> vec[i];
     }
 }
-
 void mostrar(int vec[], int tam) {
     for (int i = 0; i < tam; i++) {
-        cout << "vec[" << i << "] = " << vec[i] << endl;
+        cout << "vec[" << i << "] =";
+        cin >> vec[i];
     }
 }
-
-float promedio(int vec[], int tam) {
+float  promedio(int vec[], int tam) {
     float suma = 0;
-    for (int i = 0; i < tam; i++) {
-        suma += vec[i];
-    }
+    for (int i = 0; i < tam; i++)
+        suma = suma + vec[i];
     return suma / tam;
 }
 
-void ejercicio4(int vec[], int tam) {
-    // Verificar si el tamaño del vector es suficiente
-    if (tam < 3) {
-        cout << "El vector debe tener al menos 3 elementos para calcular los promedios." << endl;
-        return;
+int devolvermaxmin(int vec[], int tam, int& min) {
+    int max = vec[0];
+    min = vec[0];
+    for (int i = 1; i < tam; i++) {
+        if (max < vec[i])
+            max = vec[i];
+        if (min > vec[i])
+            min = vec[i];
     }
+    return max;
 
-    // Calcular el promedio de cada tres valores consecutivos
-    for (int i = 0; i < tam - 2; i++) {
-        float prom = (vec[i] + vec[i + 1] + vec[i + 2]) / 3.0;
-        cout << "Promedio de los valores " << vec[i] << ", " << vec[i + 1] << ", " << vec[i + 2] << ": " << prom << endl;
-    }
 }
