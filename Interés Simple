@@ -1,0 +1,10 @@
+Algoritmo InteresesSimple
+	Escribir "Ingrese el valor del C: "
+	Leer C
+	Escribir "Ingrese el valor de la T: "
+	Leer T
+	Escribir "Ingrese el valor de N: "
+	Leer N
+	Interessimple <- C*T*N
+	Escribir "El Interessimple es: ",Interessimple
+FinAlgoritmo
