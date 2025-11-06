@@ -1,0 +1,54 @@
+// ejemplovector.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
+//
+
+#include <iostream>
+#define MAX 100
+
+using namespace std;
+
+//Prototipos
+void cargar(int vec[], int n); //lee los datos de un arreglo
+void mostrar(int vec[], int n); //visualizar el contenido del vector
+float promedio(int vec[], int n);
+
+
+int main()
+{
+	int tamano, vec[MAX];
+	do {
+		cout << "Ingresar el tamano del vector:";
+		cin >> tamano;
+	} while ((tamano <= 0) || (tamano > MAX));
+	cargar(vec, tamano);
+	mostrar(vec, tamano);
+
+	cout << "El promedio es: " << promedio(vec, tamano);
+     //llamadas a las funciones
+  
+}
+
+//declarar las funciones
+void cargar(int vec[], int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Vector[" << i << "]= ";
+		cin >> vec[i];
+	}
+}
+
+void mostrar(int vec[], int n)
+{
+	for (int i = 0; i < n; i++)
+		cout << "Vector[" << i << "]= " << vec[i]<<endl;
+}
+
+float promedio(int vec[], int n)
+{
+	float suma = 0;
+	for (int i = 0; i < n; i++) 
+	{
+		suma = suma + vec[i];
+		return suma / n;
+	}
+}
