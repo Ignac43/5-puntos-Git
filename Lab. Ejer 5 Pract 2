@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int i, n, producto;
+    do{
+        cout << "Ingrese el valor hasta que num desea calcular el producto: ";
+        cin >> n;
+    } while (n < 0);
+    producto = 1;
+    i = 1;
+    
+    while (i<=n){
+        producto = producto *i;
+        i = i + 1;
+    }
+    cout << "El producto de los " <<n<< " primeros numeros " << " es: " << producto <<endl;
+    return 0;
+}
