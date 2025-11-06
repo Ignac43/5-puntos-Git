@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int i, n;
+    cout << "Ingrese hasta que num quiere mostrar los num impares: ";
+    cin >> n;
+    cout << "los numeros impares son: ";
+    for (i=1; i<=n; i+=2)
+    cout << i << " ";
+
+    return 0;
+}
