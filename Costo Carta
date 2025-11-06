@@ -1,0 +1,37 @@
+Proceso CostoCarta
+    Definir P, costo Como Real
+	
+    Escribir "Ingrese el peso de la carta en gramos:"
+    Leer P
+	
+    Si P <= 0 Entonces
+        Escribir "PESO INVÁLIDO"
+    Sino
+        Si P < 50 Entonces
+            costo <- 1.50
+            Escribir "El costo es Bs. ", costo
+        Sino
+            Si P <= 100 Entonces
+                costo <- 4.00
+                Escribir "El costo es Bs. ", costo
+            Sino
+                Si P <= 200 Entonces
+                    costo <- 6.00
+                    Escribir "El costo es Bs. ", costo
+                Sino
+                    Si P <= 350 Entonces
+                        costo <- 10.50
+                        Escribir "El costo es Bs. ", costo
+                    Sino
+                        Si P <= 500 Entonces
+                            costo <- 15.00
+                            Escribir "El costo es Bs. ", costo
+                        Sino
+                            Escribir "NO PUEDE ENVIAR COMO CARTA"
+                        FinSi
+                    FinSi
+                FinSi
+            FinSi
+        FinSi
+    FinSi
+FinProceso
