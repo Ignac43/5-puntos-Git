@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+void ingresarvector(int v[]);
+
+int main()
+{
+    int v[100],n;
+    cout<<"Ingrese las compras que realizo cada día: "<<endl;
+    ingresarvector(v);
+
+    return 0;
+}
+void ingresarvector(int v[]) {
+    int suma=0, desc;
+    for (int i=1;i<=7;i++) {
+        cout<<"Día "<<i<<" =  ";
+        cin>>v[i];
+        suma=suma+v[i];
+    }
+    cout<<"El valor total de la compra es: "<<suma<<endl;
+    desc=suma-(suma*0.1);
+    cout<<"El valor total de la compra con descuento es: "<<desc;
+}
