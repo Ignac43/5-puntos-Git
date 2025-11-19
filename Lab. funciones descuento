@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+void descuento(double& t);
+
+
+int main()
+{
+    double t, valor_nuevo;
+    cout << "Ingrese el valor total de la compra: ";
+    cin >> t;
+    descuento(t);
+
+}
+void descuento(double& t) {
+    t= t-(t*0.1);
+    cout << "El valor nuevo con el descuento es: " << t;
+}
