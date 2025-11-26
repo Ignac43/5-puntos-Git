@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+void metervar(string frase, string palabra);
+
+int main() {
+    string frase, palabra;
+    
+    cout << "Ingrese una frase: "<<endl;
+    getline(cin, frase);
+    cout << "la frase ingesada es: " << endl;
+    cout<< frase<<endl;
+    
+    cout << "Ingrese la palabra: " << endl;
+    cin>>palabra;
+    metervar(frase, palabra);
+
+    return 0;
+}
+
+void metervar(string frase, string palabra) {
+    size_t pos = frase.find("mundo");
+    if (pos != string::npos)
+        cout << "La frase Econtrado en: " << pos;
+    else
+        cout << "NO se encontro la palabra" << endl;
+}
